@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Biographie</title>
+    <style>
+    
+        .title-section {
+          display: flex;
+          max-width: 900px;
+          align-items: center;
+          justify-content: center;
+          position: relative; /* Occupe la place qu'elle avait initiallament avant le deplacement, donc elle ne peut pas superposer par dessus autre item, quand tu la bouge (top, bottom, left, right) elle bougera mais guarde quand meme de la place */
+          margin: 0 auto; /* Margin du haut et du bas sont 0 et la margin gauche et droite est auto, donc ceci permet au texte de ce centrer */
+        }
+        
+        .main-title {
+          text-align: center;
+          flex-grow: 1;
+        }
+        
+        .return-button {
+          position: absolute; /* Absolute: la place que le bloc occupait avant est eliminer. Ceci peut maintenant interferer avec l'espace d'autre item. Contraire de position: relative; */
+          left: 10px;
+          border-radius: 50px;
+        }
+        
+        
+        .return-button img {
+          width: 50px;
+          height: 50px;
+          margin: 20px;
+        }
+        
+        .return-button:hover {
+          background-color: #555555;
+          transform: scale(1.2);
+        }
+        
+        h1 {
+            font-size: 2.5em; /* "em" signifie la grandeur standards du text, donc, dans ce cas, c'est 2.5em, c'est a dire qu'il est 2.5 x la grandeur standards. */
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 10px 0;
+            text-align: center;
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%; /* Animation Scroll code de https://www.youtube.com/watch?v=0TnO1GzKWPc&ab_channel=SnippetsCode */
+
+        }
+        h4 {
+            border: 3px solid #4CAF50;
+            font-family: "Playfair Display", Sans-Serif;
+            text-align: center;
+            font-size: 150%;
+        }
+            
+        .highlight {  /* Une facon de distinguer certain mot important dans mon texte, avec <span class="highlight">mot important</span> */
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Bio Content code de: https://www.compnomics.in/post/html-code-to-create-a-simple-bio-data */
+        .bio-content {
+            max-width: 900px;
+            margin: 20px auto;
+            display: flex;
+            background-color: white;
+            flex-wrap: wrap;  /* flex-wrap permet au item d'aller a la prochaine ligne si il n'y a pas assez d'espace qui reste sur la premiere ligne pour entrer tout le contenue. */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            justify-content: center;
+        }
+
+        /* Ceci est tag pour mettre certain information sur le cote gauche de ma page en utilisant <div class="left-content"> code que tu veut sur cote gauche de page </div>*/
+        .left-content {
+            flex: 1; /* Permet a l'element de grandir pour prendre la place disponible dans le flex container. */
+            margin-right: 50px; /* Espace entre le texte et l'image */
+        }
+
+        /* Style pour l'image  */
+        .bio-content img {
+            max-width: 300px;
+            max-height: 400px;
+            width: auto;
+            height: auto;
+            border-radius: 5px;
+            margin-left: 20px;  /* Espace entre le text et l'image */
+        }
+
+        /* Contenue qui est centre sous mon image et l'Introduction */
+        .centered-content {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @keyframes appear {
+          from {
+            opacity: 0;
+            scale: 0.5;
+          }
+          to {
+            opacity: 1;
+            scale: 1;
+          }
+        }
+        
+    </style>
+</head>
+<body>
+  
+  <div class="title-section">
+    <div class="return-button">
+      <a href="index.html">
+        <img src="https://www.freeiconspng.com/thumbs/return-button-png/back-undo-return-button-png-5.png" alt="Retour">
+      </a>
+    </div>
+    <div class="main-title">
+      <h1>Ma Biographie</h1>
+    </div>
+  </div>
+    <!-- Section Bio Content -->
+    <div class="bio-content">
+        <!-- Contenue au cote gauche (header et paragraph) -->
+        <div class="left-content">
+            <h3 style="border: 3px solid #4CAF50; margin: auto; text-align: center; font-size: 155%;"><b>Introduction</b></h3>
+            <p>Bonjour ! Je m'appelle <span class="highlight">Tristan King</span> et je suis un joueur de volleyball compétitif avec l'aspiration de jouer au niveau universitaire. J'ai une sœur et un chien nommé <span class="highlight">Maverick</span>, qui me soutient toujours dans tout ce que je fais. Sur mes passes temps, j'adore etre avec mes amis, me pratiquer aux sports, specifiquement le volleyball et le basketball, j'aime jouer au jeux video et finalement le codage.</p>
+        </div>
+        
+        <!-- Image a la gauche -->
+        <img src="https://mail.google.com/mail/u/0?ui=2&ik=cabca28a3a&attid=0.1&permmsgid=msg-f:1825958148243897573&th=19571b42f0cebce5&view=fimg&fur=ip&permmsgid=msg-f:1825958148243897573&sz=s0-l75-ft&attbid=ANGjdJ8iuBlCQUP86CDCh24owXLHIPS5bTR3kmdlUYe_eW7YQYcuu1cHbSer7kbyti2cnTQ0JM4XST5C2XyerLxo-mF529sdmGuCOFx9dzRXHB4G0ccw11ptTTiq7xY&disp=emb&realattid=ii_19571b3e4a17eaeb9e71&zw" alt="Maverick" height="200" width="150">
+
+    <!-- Le rest du contenue centre -->
+    <div class="centered-content">
+        <h4><b>Volleyball Intérieur</b></h4>
+        <p>Actuellement, je joue pour l'équipe des <span class="highlight">Maverick Rangers 17u</span> à Ottawa, Ontario. Le volleyball occupe une place importante dans ma vie, et je suis toujours à la recherche de moyens pour améliorer mes compétences et atteindre de nouveaux objectifs.</p>
+
+        <h4><b>Codage</b></h4>
+        <p>En plus du volleyball, je suis passionné par le codage. Je fréquente le lycée <span class="highlight">Paul Desmarais</span> où je suis actuellement en 11e année. Travailler avec la technologie m'a toujours intéressé, et le codage est devenu l'un de mes passe-temps favoris.</p>
+
+        <h4><b>Volleyball de Plage</b></h4>
+        <p>Durant l'été, je pratique également le volleyball de plage. L'été dernier, j'ai eu l'opportunité de participer aux championnats nationaux où mon équipe a obtenu la troisième place ! Ce fut une expérience incroyable et cela me motive à continuer de me dépasser, tant sur le terrain qu'en dehors.</p>
+
+        <p>Je suis enthousiaste à l'idée de ce que l'avenir me réserve, et j'ai hâte de continuer à grandir en tant que joueur de volleyball et en tant que personne.</p>
+    </div>
+
+</body>
+</html>
