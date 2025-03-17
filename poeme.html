@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+    
+      .bio-content {
+        max-width: 800px;
+        border-radius: 10px;
+        display:flex; /* utilisée pour créer une mise en page flexible qui permet d'aligner et de distribuer les éléments dans un conteneur de manière efficace. En controlant leurs espaces */
+        flex-wrap: wrap; 
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        justify-content: center; /* Gere l'allignement des items qui sont sur l'axe principale. Si je fait flex-direction: column, l'axe principale devien verticale. align-items est pour gerer les item de l'axe opposer. */
+        justify-content: space-between; 
+      }
+      
+      .biography-section {
+        max-width: 800px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 20px;
+      }
+      
+      .section p {
+        width: 50%;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        font-size: 20px;
+      }
+    
+      .section img {
+        width: 300px;
+        border-radius: 30px;
+        text-align: center;
+        border: 5px solid black;
+      }
+      
+      .section-poeme {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 700px;
+        height: 500px; /* Same height as the image */
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+      }
+      
+      .section-poeme img {
+        max-width: 700px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+        border-radius: 10px;
+      }
+      
+      .poeme {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      a:hover {
+        transform: scale(1.2);
+        color:white;
+        text-decoration: underline;
+      }
+      
+      #rudyard-heading {
+        text-decoration: none; 
+        color: black; 
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        border: 3px solid black; 
+        font-size: 25px; 
+        border-radius: 10px;
+        padding: 10px; 
+        margin: auto;
+        display: flex; 
+        background-color: #c4a484; 
+        justify-content: center; 
+        font-family: "Dancing Script", cursive;
+      }
+    
+      #rudyard-heading:hover {
+        transform: scale(1.1);
+        background-color: #61503f;
+      }
+      
+      h1 {
+        font-family: Pacifico, Sans-Serif; 
+        border: 5px solid black; 
+        border-radius: 5px;
+        background-color: #C4A484; 
+        width: 800px; 
+        margin: auto; 
+        padding: 10px; 
+        display: flex; 
+        justify-content: center;
+      }
+    
+    </style>
+  </head>
+  <body>
+    
+    <div class="title-section">
+      <div class="return-button">
+        <a href="index.html">
+          <img src="https://www.freeiconspng.com/thumbs/return-button-png/back-undo-return-button-png-5.png" alt="Retour">
+        </a>
+      </div>
+      <div class="main-title">
+        <h1>Mon Poème Préféré</h1>
+      </div>
+    </div>
+    
+    <div class="bio-content">
+      <div class="biography-section">
+        <div class="section img">
+          <img src="https://ebbg7broonn.exactdn.com/wp-content/uploads/2023/11/Rudyard-Kipling-Portrait-.jpg?strip=all&lossy=1&ssl=1">
+        </div>
+        <div class="section p">
+          <a href="https://www.kiplingsociety.co.uk/poem/poems_woods.htm" id="rudyard-heading" alt="Lien de l'art"><b>Rudyard Kipling</b></h3></a>
+          <p>Rudyard Kipling (1865-1936) était un écrivain et poète britannique, célèbre pour ses récits inspirés de l’Inde coloniale. Il est l’auteur du célèbre Livre de la jungle (1894) et de poèmes emblématiques comme If— (Tu seras un homme, mon fils). Lauréat du prix Nobel de littérature en 1907, il reste l’un des auteurs les plus marquants de la littérature anglaise du XIXe et du début du XXe siècle</p>
+          <!-- Info de biographie vien de: https://fr.wikipedia.org/wiki/Rudyard_Kipling -->
+        </div>
+      </div>
+      
+      <h3 style="border: 3px solid black; margin: auto; width: 100%; text-decoration: none; color: white; margin-top: 30px; border-radius: 10px; background-color: #013220; padding: 10px; font-family: Pacifico, Sans-Serif; font-weight: bold; text-align: center; font-size: 25px;">THE WAY THROUGH THE WOODS</h3>
+      
+      <!-- Section image, poème: -->
+      
+      <div class="section-poeme"> 
+          <img src="https://plus.unsplash.com/premium_photo-1668455494252-e4ca4a2609ca?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmludGFnZSUyMG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="Foret Mysterieuse">
+        <p class="poeme">
+          They shut the road through the woods <br>
+          Seventy years ago. <br>
+          Weather and rain have undone it again,<br>
+          And now you would never know<br>
+          There was once a road through the woods<br>
+          Before they planted the trees.<br>
+          It is underneath the coppice and heath<br>
+          And the thin anemones.<br>
+          Only the keeper sees<br>
+          That, where the ring-dove broods,<br>
+           the badgers roll at ease,<br>
+          There was once a road through the woods.
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
