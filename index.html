@@ -1,1 +1,115 @@
-<p>blahblahblah</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Site Web - TK4-sys</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers ton fichier CSS existant -->
+    <style>
+        /* Code du formulaire de https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms et https://www.w3schools.com/css/css_form.asp */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            border: 3px solid black;
+            background-color: #ADD8E6;
+            font-family: Georgia;
+            padding: 10px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container textarea {
+            height: 100px;
+        }
+
+        .form-container input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar"> <!-- Cree la bar de navigation pour les differentes section de mon site web. -->
+      <ul>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="biography.html">Biography</a></li>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="voyage.html">Mon Voyage Parfait</a></li>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="poeme.html">Mon Poème Préféré</a></li>
+      </ul>
+  </nav>
+    <h1><b>FEEDBACK:</b></h1>
+
+    <div class="form-container">
+        <form action="#" method="POST">
+            <label for="email">Adresse e-mail <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail" autocomplete="off">
+
+            <label for="name">Nom <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom">
+
+            <label for="questions">Questions ?</label>
+            <textarea id="questions" name="questions" placeholder="Posez vos questions ici"></textarea>
+
+            <label for="comments">Commentaires <span class="required">*</span></label>
+            <textarea id="comments" name="comments" required placeholder="Vos commentaires"></textarea>
+
+            <label for="suggestions">Suggestions ?</label>
+            <textarea id="suggestions" name="suggestions" placeholder="Vos suggestions"></textarea>
+
+            <label>Évaluez mon site web <span class="required">*</span></label>
+            <input type="radio" id="rating5" name="rating" value="5" required> 5 (WOW ! L'une des meilleures pages web jamais créées!)<br>
+            <input type="radio" id="rating4" name="rating" value="4"> 4 (Une page très intéressante.)<br>
+            <input type="radio" id="rating3" name="rating" value="3"> 3 (Quand même bien, mais peut s'améliorer dans quelques aspects.)<br>
+            <input type="radio" id="rating2" name="rating" value="2"> 2 (Bons efforts, mais il y a encore du travail à faire pour atteindre l'excellence.)<br>
+            <input type="radio" id="rating1" name="rating" value="1"> 1 (Des améliorations sont nécessaires.)<br><br>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
