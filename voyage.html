@@ -1,115 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles2.css">
     <meta charset="UTF-8">
-    <title>Site Web - TK4-sys</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers ton fichier CSS existant -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Code du formulaire de https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms et https://www.w3schools.com/css/css_form.asp */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            border: 3px solid black;
-            background-color: #ADD8E6;
-            font-family: Georgia;
-            padding: 10px;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .form-container input[type="text"],
-        .form-container input[type="email"],
-        .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .form-container textarea {
-            height: 100px;
-        }
-
-        .form-container input[type="radio"] {
-            margin-right: 10px;
-        }
-
-        .form-container button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .form-container button:hover {
-            background-color: #45a049;
-        }
-
-        .form-container .required {
-            color: red;
-        }
+      td {
+        padding: 20px;
+      }
+      
+      .link-at {
+        transition: background-color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease;
+        display: inline-block;
+      }
+      
+      .link-at:hover {
+        background-color: turquoise;
+        transform: scale(1.2); 
+        border-bottom: 3px dotted black;
+      }
+      
+      h1 {
+        border: 5px solid black; 
+        padding: 20px; 
+        text-align: center; 
+        margin: auto; 
+        border-radius: 5px; 
+        background-color: lightblue;
+        width: 1000px; 
+        font-family: Pacifico, sans-serif;
+      }
     </style>
 </head>
 <body>
-    <nav class="navbar"> <!-- Cree la bar de navigation pour les differentes section de mon site web. -->
-      <ul>
-          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="biography.html">Biography</a></li>
-          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="voyage.html">Mon Voyage Parfait</a></li>
-          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="poeme.html">Mon Poème Préféré</a></li>
-      </ul>
-  </nav>
-    <h1><b>FEEDBACK:</b></h1>
-
-    <div class="form-container">
-        <form action="#" method="POST">
-            <label for="email">Adresse e-mail <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="Votre adresse e-mail" autocomplete="off">
-
-            <label for="name">Nom <span class="required">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Votre nom">
-
-            <label for="questions">Questions ?</label>
-            <textarea id="questions" name="questions" placeholder="Posez vos questions ici"></textarea>
-
-            <label for="comments">Commentaires <span class="required">*</span></label>
-            <textarea id="comments" name="comments" required placeholder="Vos commentaires"></textarea>
-
-            <label for="suggestions">Suggestions ?</label>
-            <textarea id="suggestions" name="suggestions" placeholder="Vos suggestions"></textarea>
-
-            <label>Évaluez mon site web <span class="required">*</span></label>
-            <input type="radio" id="rating5" name="rating" value="5" required> 5 (WOW ! L'une des meilleures pages web jamais créées!)<br>
-            <input type="radio" id="rating4" name="rating" value="4"> 4 (Une page très intéressante.)<br>
-            <input type="radio" id="rating3" name="rating" value="3"> 3 (Quand même bien, mais peut s'améliorer dans quelques aspects.)<br>
-            <input type="radio" id="rating2" name="rating" value="2"> 2 (Bons efforts, mais il y a encore du travail à faire pour atteindre l'excellence.)<br>
-            <input type="radio" id="rating1" name="rating" value="1"> 1 (Des améliorations sont nécessaires.)<br><br>
-
-            <button type="submit">Envoyer</button>
-        </form>
+    <div class="title-section">
+      <div class="return-button">
+        <a href="index.html">
+          <img src="https://www.freeiconspng.com/thumbs/return-button-png/back-undo-return-button-png-5.png" alt="Retour">
+        </a>
+      </div>
+      <div class="main-title">
+        <h1>BAHAMAS</h1>
+      </div>
     </div>
-</body>
+
+    <div class="bio-content">
+      <img src="https://www.travelzoo.com/images/blog/2021/2/11/Bahamas-Broll-3min-high.gif?width=412&spr=3" width="100%" height="100%">
+
+      <!-- Conteneur pour empiler les blocs -->
+      <div class="text-container">
+        <a style="text-decoration: none; color: black;" href="#AT" class="special"><h3><b>Attractions Touristiques</b></h3></a>
+        <a style="text-decoration: none; color: black;" href="#Menu" class="special"><h3>Menu De La Semaine</h3></a>
+      </div>
+      
+      <!-- Ajout de l'image -->
+      <img src="https://cdn5.tropicalsky.co.uk/images/800x600/kayaking-in-the-cays.jpg" alt="Image des Bahamas">
+      
+      <!-- Citation -->
+      <p style="border: 5px dotted lightblue; font-family: Lobster, cursive; font-size: 20px; padding: 15px; font-weight: bold; text-align: center; margin-top: 30px; margin-bottom: 40px;">
+        "Les Bahamas sont l'endroit où la mer rencontre le ciel, et l'âme trouve la paix. Avec ses eaux cristallines et ses sables dorés, chaque instant semble un rêve. C'est un paradis où les souvenirs se créent pour durer éternellement."
+      </p>
+      
+      <!-- Section Attractions Touristiques -->
+      <h2 id="AT" style="border: 3px solid black; width: 100%; border-radius: 5px; background-color: turquoise; padding: 20px; text-align: center; font-family: Pacifico, sans-serif; margin-top: 40px;">
+        Places À Visiter !
+      </h2>
+      
+      <div class="big-container-at">
+        <table border="3" style="padding: 5px; margin: auto;">
+          <tr>
+            <td rowspan="3" style="font-size: 23px; font-weight: bold; font-family: 'Times New Roman';">Attractions Touristiques</td>
+            <td><a class="link-at" style="text-decoration: none; color: black; font-size: 17px;" href="https://fr.tripadvisor.ca/Tourism-g147416-Nassau_New_Providence_Island_Bahamas-Vacations.html">1. Nassau</a></td>
+            <td rowspan="3"><img src="https://media2.giphy.com/media/MBZq2rSuHWXMvPWfZg/200w.gif?cid=6c09b95229xdskt68wdam59ivphb89zfewlyxij54ghlt1ad&ep=v1_gifs_search&rid=200w.gif&ct=g" height="350" width="500"></td>
+          </tr>
+          <tr>
+            <td><a class="link-at" style="text-decoration: none; color: black; font-size: 17px;" href="https://fr.tripadvisor.ca/Attractions-g147426-Activities-Bimini_Out_Islands_Bahamas.html">2. Isle Bimini</a></td>
+          </tr>
+          <tr>
+            <td><a class="link-at" style="text-decoration: none; color: black; font-size: 17px;" href="https://www.tripadvisor.ca/Attraction_Review-g147429-d12690020-Reviews-Pig_Beach-Great_Exuma_Out_Islands_Bahamas.html">3. Plages Des Cochons</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <br><br>
+
+      <div class="location-image-full-width">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/LocationBahamas.svg">
+      </div>
+      
+      <!-- Section Menu -->
+      <h2 id="Menu" style="border: 3px solid black; width: 100%; border-radius: 5px; margin-top: 60px; margin-bottom: 30px; background-color: turquoise; padding: 20px; text-align: center; font-family: Pacifico, sans-serif;">
+        Menu De La Semaine !
+      </h2>
+
+      <div class="big-container-m">
+        <div class="one-dish">
+          <img src="https://www.wholesomeyum.com/wp-content/uploads/2021/10/wholesomeyum-Baked-Salmon-Recipe-How-To-Cook-Salmon-In-The-Oven-1.jpg">
+          <p>Saumon</p>
+        </div>
+        <div class="one-dish">
+          <img src="https://natashaskitchen.com/wp-content/uploads/2020/03/Pan-Seared-Steak-4-500x500.jpg">
+          <p>Bœuf</p>
+        </div>
+        <div class="one-dish">
+          <img src="https://pinoybites.com/wp-content/uploads/2021/03/Calamari-1-scaled-500x500.jpg">
+          <p>Calamars</p>
+        </div>
+        <div class="one-dish">
+          <img src="https://images.immediate.co.uk/production/volatile/sites/2/2022/04/Coq-au-vin-73b856b.jpg?quality=90&resize=556,505">
+          <p>Poulet</p>
+        </div>
+
+        <div class="one-dish-low">
+          <img src="https://thishealthytable.com/wp-content/uploads/2024/04/baked-mahi-mahi-recipe-720x540.jpg">
+          <p>Coryphène</p>
+        </div>
+        <div class="one-dish-low">
+          <img src="https://www.wholesomeyum.com/wp-content/uploads/2023/12/wholesomeyum-Grilled-Lobster-Tail.jpg">
+          <p>Homard</p>
+        </div>
+        <div class="one-dish-low">
+          <img src="https://carlsbadcravings.com/wp-content/uploads/2020/05/jerk-shrimp-22-500x500.jpg">
+          <p>Crevette</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
