@@ -1,130 +1,269 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <link rel="stylesheet" href="styles1.css">
-    <link rel="stylesheet" href="styles2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      td {
-        padding: 20px;
-      }
+    <title>Ma Biographie</title>
+      <style>
+        /* Copier de index.html nav.bar je n'ai pas attacher le document CSS parce que je voulais faire des changements spécifique pour ce document ici.*/
+        .navbar {
+          background-color: #4CAF50;
+          padding: 20px 0px;
+          text-align: center;
+        }
+        
+        .navbar ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .navbar ul li {
+          display: inline;
+          margin: 0 auto;
+        }
       
-      .link-at {
-        transition: background-color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease;
-        display: inline-block;
-      }
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
       
-      .link-at:hover {
-        background-color: turquoise;
-        transform: scale(1.2); 
-        border-bottom: 3px dotted black;
-      }
-      
-      h1 {
-        border: 5px solid black; 
-        padding: 20px; 
-        text-align: center; 
-        margin: auto; 
-        border-radius: 5px; 
-        background-color: lightblue;
-        width: 1000px; 
-        font-family: Pacifico, sans-serif;
-      }
-    </style>
+        .navbar ul li a:hover {
+            background-color: #555555;
+            border-radius: 5px;
+        }
+
+        .title-section {
+          display: flex;
+          max-width: 900px;
+          align-items: center;
+          justify-content: center;
+          position: relative; /* Occupe la place qu'elle avait initialement avant le déplacement, donc elle ne peut pas superposer par-dessus un autre élément, quand tu la bouges (top, bottom, left, right) elle bougera mais garde quand même de la place */
+          margin: 0 auto; /* Margin du haut et du bas sont 0 et la margin gauche et droite est auto, donc ceci permet au texte de se centrer */
+        }
+        
+        .main-title {
+          text-align: center;
+          flex-grow: 1;
+        }
+        
+        .return-button {
+          position: absolute; /* Absolute: la place que le bloc occupait avant est éliminée. Ceci peut maintenant interférer avec l'espace d'autres éléments. Contraire de position: relative; */
+          left: 10px;
+          border-radius: 50px;
+        }
+        
+        
+        .return-button img {
+          width: 50px;
+          height: 50px;
+          margin: 20px;
+        }
+        
+        .return-button:hover {
+          background-color: #555555;
+          transform: scale(1.2);
+        }
+        
+        h1 {
+            font-size: 2.5em; /* "em" signifie la grandeur standard du texte, donc, dans ce cas, c'est 2.5em, c'est-à-dire qu'il est 2.5 fois la grandeur standard. */
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 10px 0;
+            text-align: center;
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%; /* Animation Scroll code de https://www.youtube.com/watch?v=0TnO1GzKWPc&ab_channel=SnippetsCode */
+        }
+
+        h4 {
+            border: 3px solid #4CAF50;
+            font-family: "Playfair Display", Sans-Serif;
+            text-align: center;
+            font-size: 150%;
+        }
+            
+        .highlight {  /* Une façon de distinguer certains mots importants dans mon texte, avec <span class="highlight">mot important</span> */
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Bio Content code de: https://www.compnomics.in/post/html-code-to-create-a-simple-bio-data */
+        .bio-content {
+            max-width: 900px;
+            margin: 20px auto;
+            display: flex;
+            background-color: white;
+            flex-wrap: wrap;  /* flex-wrap permet aux éléments d'aller à la prochaine ligne s'il n'y a pas assez d'espace qui reste sur la première ligne pour entrer tout le contenu. */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            justify-content: center;
+        }
+
+        /* Ceci est le tag pour mettre certaines informations sur le côté gauche de ma page en utilisant <div class="left-content"> code que tu veux sur le côté gauche de la page </div> */
+        .left-content {
+            flex: 1; /* Permet à l'élément de grandir pour prendre la place disponible dans le flex container. */
+            margin-right: 50px; /* Espace entre le texte et l'image */
+        }
+
+        /* Style pour l'image  */
+        .bio-content img {
+          border: 5px solid black;
+          max-width: 900px;
+          width: 20%;
+          height: auto;
+          border-radius: 5px;
+          margin-left: 20px;  /* Espace entre le texte et l'image */
+        }
+
+        /* Contenu qui est centré sous mon image et l'Introduction */
+        .centered-content {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        
+        .lien-pref {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          max-width: 900px;
+        }
+        .lien-pref a {
+          border: 3px dotted #4CAF50;
+          padding: 40px;
+          background-color: white;
+          color: black;
+          width: 20%;
+          margin: 20px auto;
+          text-decoration: none;
+          font-size: 17px;
+          font-family: Lobster, cursive;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        
+        .lien-pref a:hover {
+          background-color: #AFE1AF;
+          transform: scale(1.1);
+        }
+        
+        
+        @keyframes appear {
+          from {
+            opacity: 0;
+            scale: 0.5;
+          }
+          to {
+            opacity: 1;
+            scale: 1;
+          }
+        }
+        
+      </style>
 </head>
 <body>
-    <div class="title-section">
-      <div class="return-button">
-        <a href="index.html">
-          <img src="https://www.freeiconspng.com/thumbs/return-button-png/back-undo-return-button-png-5.png" alt="Retour">
-        </a>
-      </div>
-      <div class="main-title">
-        <h1>BAHAMAS</h1>
-      </div>
+  
+  <div class="title-section">
+    <div class="return-button">
+      <a href="index.html">
+        <img src="https://www.freeiconspng.com/thumbs/return-button-png/back-undo-return-button-png-5.png" alt="Retour">
+      </a>
     </div>
-
+    <div class="main-title">
+      <h1>Ma Biographie</h1>
+    </div>
+  </div>
+    
+    <!-- Liens Internes --- Différentes catégories de Ma Biographie -->
+    <nav class="navbar"> <!-- Crée la barre de navigation pour les différentes sections de mon site web. -->
+      <ul>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="#intro">Introduction</a></li>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="#liens">Liens Préférés</a></li>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="#int">Volleyball Intérieur</a></li>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="#code">Codage</a></li>
+          <li><a style="font-weight:bold; font-size: 20px; font-family: Georgia, cursive;" href="#plage">Volleyball de Plage</a></li>
+      </ul>
+    </nav>
+    
+    
+    <!-- Section Bio Content -->
     <div class="bio-content">
-      <img src="https://www.travelzoo.com/images/blog/2021/2/11/Bahamas-Broll-3min-high.gif?width=412&spr=3" width="100%" height="100%">
+      
+        <!-- Contenu au côté gauche (header et paragraphe) -->
+        <div class="left-content">
+            <h3 style="border: 3px solid #4CAF50; margin: auto; text-align: center; font-size: 155%;" id="intro"><b>Introduction</b></h3>
+            <p>Bonjour ! Je m'appelle <span class="highlight">Tristan</span> et je suis un joueur de volleyball compétitif avec l'aspiration de jouer au niveau universitaire. J'ai une sœur et un chien nommé <span class="highlight">Maverick</span>, qui me soutient toujours dans tout ce que je fais. Pendant mes passe-temps, j'adore être avec mes amis, pratiquer des sports, spécifiquement le volleyball et le basketball, j'aime jouer aux jeux vidéo et enfin, le codage.</p>
+        </div>
+        
+        <!-- Image à la gauche -->
+        <img src="https://assets.onecompiler.app/43abqwvbj/43abqy2y4/tristan%20image.jpg" alt="Moi">
 
-      <!-- Conteneur pour empiler les blocs -->
-      <div class="text-container">
-        <a style="text-decoration: none; color: black;" href="#AT" id="special"><h3><b>Attractions Touristiques</b></h3></a>
-        <a style="text-decoration: none; color: black;" href="#Menu" id="special"><h3>Menu De La Semaine</h3></a>
-      </div>
+    <!-- Le reste du contenu centré -->
+    <div class="centered-content">
+        
+        <h4 id="liens"><b>Liens Préférés</b></h4>
+        <div class="lien-pref">
+          <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal">Wikipédia</a>
+          <a href="https://www.friv.com/">Friv</a>
+          <a href="https://fr.wikipedia.org/wiki/New_York">New York</a>
+        </div>
       
-      <!-- Ajout de l'image -->
-      <img src="https://cdn5.tropicalsky.co.uk/images/800x600/kayaking-in-the-cays.jpg" alt="Image des Bahamas">
-      
-      <!-- Citation -->
-      <p style="border: 5px dotted lightblue; font-family: Lobster, cursive; font-size: 20px; padding: 15px; font-weight: bold; text-align: center; margin-top: 30px; margin-bottom: 40px;">
-        "Les Bahamas sont l'endroit où la mer rencontre le ciel, et l'âme trouve la paix. Avec ses eaux cristallines et ses sables dorés, chaque instant semble un rêve. C'est un paradis où les souvenirs se créent pour durer éternellement."
-      </p>
-      
-      <!-- Section Attractions Touristiques -->
-      <h2 id="AT" style="border: 3px solid black; width: 100%; border-radius: 5px; background-color: turquoise; padding: 20px; text-align: center; font-family: Pacifico, sans-serif; margin-top: 40px;">
-        Places À Visiter !
-      </h2>
-      
-      <div class="big-container-at">
-        <table border="3" style="padding: 5px; margin: auto;">
+        <h4 id="int"><b>Volleyball Intérieur</b></h4>
+        <p>Actuellement, je joue pour l'équipe des <span class="highlight">Maverick Rangers 17u</span> à Ottawa, Ontario. Le volleyball occupe une place importante dans ma vie, et je suis toujours à la recherche de moyens pour améliorer mes compétences et atteindre de nouveaux objectifs.</p>
+
+        <h4 id="code"><b>Codage</b></h4>
+        <p>En plus du volleyball, je suis passionné par le codage. Je fréquente le lycée <span class="highlight">Paul Desmarais</span> où je suis actuellement en 11e année. Travailler avec la technologie m'a toujours intéressé, et le codage est devenu l'un de mes passe-temps favoris.</p>
+        
+        
+        <table style="margin:auto; margin-top: 50px; margin-bottom: 70px; max-width: 900px; width: 70%;" border="2">
+          <th colspan="3" style="padding: 20px; font-size: 20px; border: 5px solid lightgreen; border-radius: 5px;">Mes Compétences Des Langages</th>
           <tr>
-            <td rowspan="3" style="font-size: 23px; font-weight: bold; font-family: 'Times New Roman';">Attractions Touristiques</td>
-            <td><a class="link-at" style="text-decoration: none; color: black; font-size: 17px;" href="https://fr.tripadvisor.ca/Tourism-g147416-Nassau_New_Providence_Island_Bahamas-Vacations.html">1. Nassau</a></td>
-            <td rowspan="3"><img src="https://media2.giphy.com/media/MBZq2rSuHWXMvPWfZg/200w.gif?cid=6c09b95229xdskt68wdam59ivphb89zfewlyxij54ghlt1ad&ep=v1_gifs_search&rid=200w.gif&ct=g" height="350" width="500"></td>
+            <th style="padding: 15px;" colspan="1">HTML</th>
+            <th style="padding: 15px;" colspan="1">CSS</th>
+            <th style="padding: 15px;" colspan="1">JavaScript</th>
           </tr>
           <tr>
-            <td><a class="link-at" style="text-decoration: none; color: black; font-size: 17px;" href="https://fr.tripadvisor.ca/Attractions-g147426-Activities-Bimini_Out_Islands_Bahamas.html">2. Isle Bimini</a></td>
+            <td>Expert</td>
+            <td>Expert</td>
+            <td>Expert</td>
           </tr>
           <tr>
-            <td><a class="link-at" style="text-decoration: none; color: black; font-size: 17px;" href="https://www.tripadvisor.ca/Attraction_Review-g147429-d12690020-Reviews-Pig_Beach-Great_Exuma_Out_Islands_Bahamas.html">3. Plages Des Cochons</a></td>
+            <td style="background-color: #555555;">Bon</td>
+            <td>Bon</td>
+            <td>Bon</td>
           </tr>
+          <tr>
+            <td>Médiocre</td>
+            <td style="background-color: #555555;">Médiocre</td>
+            <td>Médiocre</td>
+          </tr>
+          <tr>
+            <td>Débutant</td>
+            <td>Débutant</td>
+            <td>Débutant</td>
+          </tr>
+            <td>Aucune Expérience</td>
+            <td>Aucune Expérience</td>
+            <td style="background-color: #555555;">Aucune Expérience</td>
         </table>
-      </div>
+        
+        
+        <h4 id="plage"><b>Volleyball de Plage</b></h4>
+        <p>Durant l'été, je pratique également le volleyball de plage. L'été dernier, j'ai eu l'opportunité de participer aux championnats nationaux où mon équipe a obtenu la troisième place ! Ce fut une expérience incroyable et cela me motive à continuer de me dépasser, tant sur le terrain qu'en dehors.</p>
 
-      <br><br>
-
-      <div class="location-image-full-width">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/LocationBahamas.svg">
-      </div>
-      
-      <!-- Section Menu -->
-      <h2 id="Menu" style="border: 3px solid black; width: 100%; border-radius: 5px; margin-top: 60px; margin-bottom: 30px; background-color: turquoise; padding: 20px; text-align: center; font-family: Pacifico, sans-serif;">
-        Menu De La Semaine !
-      </h2>
-
-      <div class="big-container-m">
-        <div class="one-dish">
-          <img src="https://www.wholesomeyum.com/wp-content/uploads/2021/10/wholesomeyum-Baked-Salmon-Recipe-How-To-Cook-Salmon-In-The-Oven-1.jpg">
-          <p>Saumon</p>
-        </div>
-        <div class="one-dish">
-          <img src="https://natashaskitchen.com/wp-content/uploads/2020/03/Pan-Seared-Steak-4-500x500.jpg">
-          <p>Bœuf</p>
-        </div>
-        <div class="one-dish">
-          <img src="https://pinoybites.com/wp-content/uploads/2021/03/Calamari-1-scaled-500x500.jpg">
-          <p>Calamars</p>
-        </div>
-        <div class="one-dish">
-          <img src="https://images.immediate.co.uk/production/volatile/sites/2/2022/04/Coq-au-vin-73b856b.jpg?quality=90&resize=556,505">
-          <p>Poulet</p>
-        </div>
-
-        <div class="one-dish-low">
-          <img src="https://thishealthytable.com/wp-content/uploads/2024/04/baked-mahi-mahi-recipe-720x540.jpg">
-          <p>Coryphène</p>
-        </div>
-        <div class="one-dish-low">
-          <img src="https://www.wholesomeyum.com/wp-content/uploads/2023/12/wholesomeyum-Grilled-Lobster-Tail.jpg">
-          <p>Homard</p>
-        </div>
-        <div class="one-dish-low">
-          <img src="https://carlsbadcravings.com/wp-content/uploads/2020/05/jerk-shrimp-22-500x500.jpg">
-          <p>Crevette</p>
-        </div>
-      </div>
+        <p>Je suis enthousiaste à l'idée de ce que l'avenir me réserve, et j'ai hâte de continuer à grandir en tant que joueur de volleyball et en tant que personne.</p>
     </div>
-  </body>
+
+</body>
 </html>
