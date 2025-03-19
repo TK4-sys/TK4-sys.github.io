@@ -1,0 +1,139 @@
+.bio-content {
+  max-width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  background-color: white;
+  flex-wrap: wrap;  /* Permet le wrapping pour les écrans plus petites */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.text-container { 
+  /* Sera dedans bio-content pour organiser les blocs de textes */
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement */
+  gap: 15px; /* Ajoute un petit espace entre les blocs */
+}
+
+.special {
+  border: 3px solid lightblue;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: lightblue;
+  font-family: Lora, Sans-Serif;
+  width: fit-content;
+  max-width: 1000px; 
+  width: 80%;
+  text-align: center;
+  margin: 0;
+  border: 3px solid black;
+  transition: background-color 0.5s ease;
+}
+
+.bio-content img {
+  max-width: 300px;
+  height: 250px;
+  border-radius: 10px; 
+}
+
+.special:hover {
+  background-color: lightgreen;
+  transform: scale(1.1);
+}
+
+.big-container-at {
+  display: flex;
+  max-width: 1000px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 5px solid turquoise;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.location-image-full-width img {
+  width: 100%;
+  max-width: 1000px; /* Correspond à .bio-content's max-width */
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.big-container-m {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* flex-wrap veut dire que s'il n'y a pas assez de place, les éléments se déplaceront à la ligne suivante. */
+  width: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 5px solid turquoise;
+  border-radius: 5px;
+}
+
+.one-dish {
+  justify-content: center;
+  gap: 5px;
+  margin: auto;
+  border: 3px solid black;
+  width: fit-content;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  font-family: "Playfair Display", cursive;
+}
+
+.one-dish img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.one-dish-low {
+  justify-content: space-between;
+  margin: auto;
+  border: 3px solid black;
+  width: fit-content;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 15px;
+  font-family: "Playfair Display", cursive;
+}
+
+.one-dish-low img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+/* ANIMATION SCROLLING - Code de https://www.youtube.com/watch?v=0TnO1GzKWPc&ab_channel=SnippetsCode */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+h2 { /* J'ai utilisé les animations scroll dans Biographie, le vidéo où j'ai récupérer ce code est dans ce document là */
+  animation: appear linear;
+  animation-timing-function: ease-in-out; 
+  animation-duration: 1s;  /* Ajoute une durée */
+  animation-timeline: view();
+  animation-range: entry 0% cover 60%;
+}
