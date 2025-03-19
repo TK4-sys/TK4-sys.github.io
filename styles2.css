@@ -3,29 +3,28 @@
   max-width: 900px;
   align-items: center;
   justify-content: center;
-  position: relative; /* Occupe la place qu'elle avait initiallament avant le deplacement, donc elle ne peut pas superposer par dessus autre item, quand tu la bouge (top, bottom, left, right) elle bougera mais guarde quand meme de la place */
-  margin: 0 auto; /* Margin du haut et du bas sont 0 et la margin gauche et droite est auto, donc ceci permet au texte de ce centrer */
+  position: relative; /* Occupe la place qu'elle avait initialement avant le déplacement, donc elle ne peut pas se superposer par-dessus un autre élément. Quand tu la bouges (top, bottom, left, right), elle bougera mais garde quand même de la place. */
+  margin: 0 auto; /* Margin du haut et du bas sont 0 et la margin gauche et droite est auto, donc cela permet au texte de se centrer. */
 }
-  
+
 .main-title {
   text-align: center;
   flex-grow: 1;
 }
-  
+
 .return-button {
-  position: absolute; /* Absolute: la place que le bloc occupait avant est eliminer. Ceci peut maintenant interferer avec l'espace d'autre item. Contraire de position: relative; */
+  position: absolute; /* Absolute : la place que le bloc occupait avant est éliminée. Cela peut maintenant interférer avec l'espace d'autres éléments. Contrairement à position : relative; */
   left: 20px;
   border-radius: 50px;
   text-align: left;
 }
-  
-  
+
 .return-button img {
   width: 50px;
   height: 50px;
   margin: 20px;
 }
-  
+
 .return-button:hover {
   background-color: #555555;
   transform: scale(1.2);
